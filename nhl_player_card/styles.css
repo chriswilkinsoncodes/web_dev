@@ -1,22 +1,27 @@
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 0;
   padding: 0;
 }
 
-h1, p {
-  color:#fff;
+h1,
+p {
+  color: #fff;
 }
 
 h2 {
-  color:#00488e;
+  color: #00488e;
 }
 
 .container {
@@ -47,7 +52,7 @@ main {
 }
 
 dl {
-  margin-top: 0
+  margin-top: 0;
 }
 
 dt {
@@ -74,6 +79,14 @@ dl.stats > div {
 dl.career > div {
   display: grid;
   grid-template-columns: 15% 85%;
+}
+
+dl.career dt {
+  grid-column: 1;
+}
+
+dl.career dd {
+  grid-column: 2;
 }
 
 dt::after {
