@@ -15,9 +15,33 @@ let currentSnake = [2, 1, 0];
 let direction = 1;
 let appleIndex = 0;
 let score = 0;
-let intervalTime = 700;
+let pointValue = 1;
+let intervalTime = 500;
 let timerID = 0;
-let speed = 20;
+let speed = 25;
+
+const food = [
+  {
+    name: 'apple',
+    icon: '<i class="fas fa-apple-alt"></i>',
+    points: 4,
+  },
+  {
+    name: 'carrot',
+    icon: '<i class="fas fa-carrot"></i>',
+    points: 3,
+  },
+  {
+    name: 'lime',
+    icon: '<i class="fas fa-lemon"></i>',
+    points: 2,
+  },
+  {
+    name: 'bread',
+    icon: '<i class="fas fa-bread-slice"></i>',
+    points: 1,
+  },
+];
 
 function createGrid() {
   //create 100 of these elements with a for loop
@@ -41,14 +65,14 @@ function startGame() {
   currentSnake.forEach((index) => squares[index].classList.remove('snake'));
   // remove apple (if restarting)
   squares[appleIndex].innerHTML = '';
-  squares[appleIndex].classList.remove('apple');
+  squares[appleIndex].classList.remove(food[randomFoodIndex].name);
   clearInterval(timerID);
   currentSnake = [2, 1, 0];
   direction = 1;
   score = 0;
   // reset score in browser
   scoreEl.textContent = score;
-  intervalTime = 700;
+  intervalTime = 500;
   generateApple();
   // re-add class of snake to new currentSnake
   currentSnake.forEach((index) => squares[index].classList.add('snake'));
@@ -73,18 +97,18 @@ function move() {
   currentSnake.unshift(currentSnake[0] + direction);
 
   //deal with snake head gets apple
-  if (squares[currentSnake[0]].classList.contains('apple')) {
+  if (squares[currentSnake[0]].classList.contains(food[randomFoodIndex].name)) {
     //remove the class of apple
     squares[currentSnake[0]].innerHTML = '';
-    squares[currentSnake[0]].classList.remove('apple');
+    squares[currentSnake[0]].classList.remove(food[randomFoodIndex].name);
     //grow our snake by adding class of snake to it
     squares[tail].classList.add('snake');
     //grow our snake array
     currentSnake.push(tail);
+    //add one to the score
+    score += pointValue;
     //generate new apple
     generateApple();
-    //add one to the score
-    score++;
     //display our score
     scoreEl.textContent = score;
     //speed up our snake
@@ -101,8 +125,10 @@ function generateApple() {
   do {
     appleIndex = Math.floor(Math.random() * squares.length);
   } while (squares[appleIndex].classList.contains('snake'));
-  squares[appleIndex].innerHTML = '<i class="fas fa-apple-alt"></i>';
-  squares[appleIndex].classList.add('apple');
+  randomFoodIndex = Math.floor(Math.random() * food.length);
+  squares[appleIndex].innerHTML = food[randomFoodIndex].icon;
+  squares[appleIndex].classList.add(food[randomFoodIndex].name);
+  pointValue = food[randomFoodIndex].points;
 }
 generateApple();
 
