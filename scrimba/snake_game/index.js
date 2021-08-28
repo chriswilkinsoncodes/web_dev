@@ -10,13 +10,14 @@ const startButton = document.getElementById('start');
 const scoreEl = document.getElementById('score');
 const width = 10;
 
+let intervalTime = document.querySelector('input[name="speed"]:checked').value;
 let squares = [];
 let currentSnake = [2, 1, 0];
 let direction = 1;
 let appleIndex = 0;
 let score = 0;
 let pointValue = 1;
-let intervalTime = 500;
+// let intervalTime;
 let timerID = 0;
 let speed = 25;
 
@@ -72,7 +73,7 @@ function startGame() {
   score = 0;
   // reset score in browser
   scoreEl.textContent = score;
-  intervalTime = 500;
+  intervalTime = document.querySelector('input[name="speed"]:checked').value;
   generateApple();
   // re-add class of snake to new currentSnake
   currentSnake.forEach((index) => squares[index].classList.add('snake'));

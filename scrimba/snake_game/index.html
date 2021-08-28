@@ -27,10 +27,40 @@ TODO: set initial speed; set acceleration; set width -->
     <title>Snake Game</title>
   </head>
   <body>
-    <h1>Snake Game</h1>
-    <button id="start" class="btn">Start / Restart</button>
-    <h2>Score: <span id="score">0</span></h2>
-    <div class="grid"></div>
+    <div class="container">
+      <div class="game">
+        <h1>Snake Game</h1>
+        <!-- use autocomplete="off" so firefox will reset to the checked button on page refresh -->
+        <form autocomplete="off">
+          Select initial speed:
+          <div>
+            <input type="radio" id="slow-speed" name="speed" value="1000" />
+            <label for="slow-speed">Slow</label>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              id="medium-speed"
+              name="speed"
+              value="600"
+              checked
+            />
+            <label for="medium-speed">Medium</label>
+          </div>
+
+          <div>
+            <input type="radio" id="fast-speed" name="speed" value="300" />
+            <label for="fast-speed">Fast</label>
+          </div>
+        </form>
+        <button id="start" class="btn">Start / Restart</button>
+        <h2>Score: <span id="score">0</span></h2>
+        <div class="grid"></div>
+      </div>
+      <!-- close game -->
+    </div>
+    <!-- close container -->
     <script src="index.js"></script>
   </body>
 </html>
