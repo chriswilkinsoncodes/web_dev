@@ -123,6 +123,17 @@ aside {
   width: 24%;
 }
 
+@media (max-width: 800px) {
+  .container-main {
+    display: block;
+  }
+
+  main,
+  aside {
+    width: 100%;
+  }
+}
+
 img {
   width: 100%;
 }
@@ -156,11 +167,9 @@ img {
 }
 
 .article-body {
-  /* font-family: 'Ubuntu', sans-serif; */
   font-size: 1.125rem;
   font-weight: 300;
   color: #707070;
-  /* letter-spacing: 0.025rem; */
 }
 
 .article-body-accent {
@@ -237,6 +246,15 @@ main a:focus {
 .widget-recent-post {
   display: flex;
   flex-direction: column-reverse;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #707070;
+}
+
+.widget-recent-post:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: none;
 }
 
 .widget-recent-post-title {
