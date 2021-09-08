@@ -4,12 +4,12 @@
 
 body {
   background-color: #000;
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
-  color: #404040;
+  color: #5a5a5a;
 }
 
 img {
@@ -44,8 +44,8 @@ aside {
 
 input {
   font-size: 0.625rem;
-  border-radius: 3px;
-  border: 1px solid #404040;
+  border-radius: 4px;
+  border: 1px solid #5a5a5a;
   padding: 0.5rem;
 }
 
@@ -77,6 +77,7 @@ h1 {
 
 h2 {
   font-size: 1.3125rem;
+  color: #404040;
   margin: 0;
   /* padding-bottom: 2em; */
 }
@@ -92,19 +93,20 @@ small {
 .top-bar,
 .subtitle,
 .register-subtitle,
-.register-button {
+.register-btn {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .top-bar,
 .subtitle,
 .register-subtitle {
+  margin: 0;
   color: #f18119;
 }
 
 .top-bar {
   margin: 0 auto;
-  border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
+  border-image: linear-gradient(270deg, #ff713b, #ffa51d) 1;
   border-top: 0.5em solid;
 }
 
@@ -121,17 +123,27 @@ form {
   margin-bottom: 1rem;
 }
 
-.register-text {
-  color: rgb(64, 64, 64, 0.5);
+.btn {
+  font-size: 0.625rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border: 1px solid #fff;
 }
 
-.register-button {
-  font-size: 0.625rem;
-  background-image: linear-gradient(to left, #ff713b, #ffa51d);
+.register-btn {
+  background-image: linear-gradient(270deg, #ff713b 0%, #ffa51d 100%);
   color: white;
-  border: 1px solid #404040;
-  border-radius: 3px;
-  padding: 0.5rem 0;
+}
+
+.register-btn:hover,
+.register-btn:focus {
+  background: none;
+  background-color: #fff;
+  color: #ff713b;
+  border: 1px solid #5a5a5a;
 }
 
 .register-disclaimer {
@@ -155,6 +167,7 @@ form {
 
   main {
     width: 65%;
+    /* display: block; */
   }
 
   aside {
