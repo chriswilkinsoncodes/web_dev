@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  color: #404040;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* font-weight: 400; */
+  background-color: #404040;
+  background-image: url(images/dark-ribs.jpg);
+  background-position: center;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  height: 40vh;
+  text-align: center;
+  padding: 0 4em 2em;
+}
+
+aside {
+  background-color: #fff;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2em;
+}
+
+input {
+  font-size: 0.625rem;
+  border-radius: 3px;
+  border: 1px solid #404040;
+  padding: 0.5rem;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+.container {
+  max-width: 965px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#register {
+  display: flex;
+  flex-direction: column;
+}
+
+/* *** Typography *** */
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  line-height: 1em;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  margin: 0;
+  /* padding-bottom: 2em; */
+}
+
+strong {
+  font-weight: 900;
+}
+
+small {
+  font-size: 0.625rem;
+}
+
+.top-bar,
+.subtitle,
+.register-subtitle,
+.register-button {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.top-bar,
+.subtitle,
+.register-subtitle {
+  color: #f18119;
+}
+
+.top-bar {
+  margin: 0 auto;
+  border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
+  border-top: 0.5em solid;
+}
+
+.subtitle {
+  margin: 0;
+}
+
+#email {
+  margin: 0.75em 0;
+}
+
+form {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.register-text {
+  color: rgb(64, 64, 64, 0.5);
+}
+
+.register-button {
+  font-size: 0.625rem;
+  background-image: linear-gradient(to left, #ff713b, #ffa51d);
+  color: white;
+  border: 1px solid #404040;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+}
+
+.register-disclaimer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-disclaimer p {
+  margin: 0;
+}
+
+@media (min-width: 565px) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  main,
+  aside {
+    min-height: 100vh;
+  }
+
+  main {
+    width: 65%;
+  }
+
+  aside {
+    width: 35%;
+    min-width: 400px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+}
